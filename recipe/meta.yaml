@@ -12,7 +12,7 @@ source:
     - setup.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -57,3 +57,4 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
+    - lauri-codes 
