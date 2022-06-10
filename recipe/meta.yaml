@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
   sha256: e0dba756790bef48b27a13577af9df2c9e9e424d402bb1f18c7d0d80d56cf30d
-  patches:
-    - setup.patch
 
 build:
   number: 0
