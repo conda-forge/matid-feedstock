@@ -1,5 +1,5 @@
 {% set name = "matid" %}
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
-  sha256: 915977090005e46a65a56b536d6a4be993e10a38318c07e5f08ccbfabb0a2911
-  patches:
-    - setup.patch
+  sha256: e0dba756790bef48b27a13577af9df2c9e9e424d402bb1f18c7d0d80d56cf30d
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -57,4 +55,4 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
-    - lauri-codes 
+    - lauri-codes
