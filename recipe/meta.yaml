@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
     - pybind11
     - {{ compiler('c') }}
   run:
@@ -25,7 +25,7 @@ requirements:
     - future
     - networkx >=2.4
     - numpy
-    - python >=3.5
+    - python
     - pybind11
     - scipy
     - scikit-learn
