@@ -19,6 +19,7 @@ requirements:
     - python
     - pybind11
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   run:
     - ase
     - chronic
