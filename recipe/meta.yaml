@@ -1,5 +1,5 @@
 {% set name = "matid" %}
-{% set version = "0.6.3" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,27 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
-  sha256: e0dba756790bef48b27a13577af9df2c9e9e424d402bb1f18c7d0d80d56cf30d
+  sha256: d946c0525b3193a2f58a1fd0d1b02321a55dac32e9817c403a523248059e68f8
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
+    - pybind11
+    - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   run:
     - ase
     - chronic
     - future
     - networkx >=2.4
     - numpy
-    - python >=3.5
+    - python
+    - pybind11
     - scipy
     - scikit-learn
     - spglib >=1.15.0
