@@ -11,20 +11,23 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
+    - pybind11
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   run:
     - ase
     - chronic
     - future
     - networkx >=2.4
     - numpy
-    - python >=3.5
+    - python
+    - pybind11
     - scipy
     - scikit-learn
     - spglib >=1.15.0
