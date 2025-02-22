@@ -1,13 +1,13 @@
 {% set name = "matid" %}
-{% set version = "2.1.4" %}
+{% set version = "2.1.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
-  sha256: 7b6c8e023bd91b1f5eba3bae7a1aec7526ed621fc4a585406d69226146cf5f9d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
+  sha256: 2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4
 
 build:
   number: 0
@@ -25,12 +25,12 @@ requirements:
     - chronic
     - future
     - networkx >=2.4
-    - numpy <2.0.0
+    - numpy
     - python
     - pybind11
     - scipy
     - scikit-learn
-    - spglib >=1.15.0
+    - spglib >=2.0.0
 
 test:
   imports:
