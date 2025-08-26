@@ -1,5 +1,5 @@
 {% set name = "matid" %}
-{% set version = "2.1.5" %}
+{% set version = "2.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
-  sha256: 2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4
+  sha256: 7cb5343fefe6bbddead228029cdbd4987df9e22779e50c21c238d641adeee651
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
     - pybind11
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - setuptools
   run:
     - ase
     - chronic
