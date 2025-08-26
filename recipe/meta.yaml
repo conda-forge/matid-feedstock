@@ -20,6 +20,7 @@ requirements:
     - pybind11
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - setuptools
   run:
     - ase
     - chronic
