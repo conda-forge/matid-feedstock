@@ -1,5 +1,5 @@
 {% set name = "matid" %}
-{% set version = "2.1.6" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz
-  sha256: 7cb5343fefe6bbddead228029cdbd4987df9e22779e50c21c238d641adeee651
+  sha256: df2c65317cb42cfa3f05b4f5bb2eea8af9bd9a105a021fba4aa0c3eaf6c2a98b
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
