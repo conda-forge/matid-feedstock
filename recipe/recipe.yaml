@@ -1,0 +1,62 @@
+schema_version: 1
+
+context:
+  name: matid
+  version: "2.2.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matid-${{ version }}.tar.gz
+  sha256: df2c65317cb42cfa3f05b4f5bb2eea8af9bd9a105a021fba4aa0c3eaf6c2a98b
+
+build:
+  number: 2
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python
+    - pybind11
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - setuptools
+  run:
+    - ase
+    - chronic
+    - future
+    - networkx >=2.4
+    - numpy
+    - python
+    - pybind11
+    - scipy
+    - scikit-learn
+    - spglib >=2.0.0
+
+tests:
+  - python:
+      imports:
+        - matid
+        - matid.classification
+      pip_check: true
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: MatID is a python package for identifying and analyzing atomistic systems based on their structure.
+  description: |
+    MatID is a python package for identifying and analyzing atomistic
+    systems based on their structure. MatID is designed to help
+    researchers in the automated analysis and labeling of atomistic
+    datasets.
+  homepage: https://singroup.github.io/matid/
+  repository: https://github.com/SINGROUP/matid
+  documentation: https://singroup.github.io/matid/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - lauri-codes
